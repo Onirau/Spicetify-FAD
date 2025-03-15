@@ -5,6 +5,20 @@
 	  },
 	  "description": {
 		"fullscreen": "Fullscreen Display"
+	  },
+	  "settings": {
+		"settings_title": "Settings",
+		"language": "Language",
+		"on_startup": "Run on Startup",
+		"enable_fullscreen": "Enable Fullscreen",
+		"enable_edgeglow": "Enable Edge Glow",
+		"bg_type": "Background Type",
+		"bg_types": {
+			"album": "Album",
+			"static": "Static",
+			"artist": "Artist"
+		},
+		"bg_blur": "Background Blur"
 	  }
 	}
   }

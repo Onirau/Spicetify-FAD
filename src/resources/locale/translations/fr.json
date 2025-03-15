@@ -1,0 +1,24 @@
+{
+	"langName": "Français (Traduit Automatiquement)",
+	"strings": {
+		"actions": {
+		},
+		"description": {
+			"fullscreen": "Plein écran"
+		},
+		"settings": {
+			"settings_title": "Paramètres",
+			"language": "Langue",
+			"on_startup": "Lancer au démarrage",
+			"enable_fullscreen": "Activer le mode plein écran",
+			"enable_edgeglow": "Activer l'éclat des bords",
+			"bg_type": "Type de fond",
+			"bg_types": {
+				"album": "Album",
+				"static": "Statique",
+				"artist": "Artiste"
+			},
+			"bg_blur": "Flou de fond"
+		}
+	}
+}

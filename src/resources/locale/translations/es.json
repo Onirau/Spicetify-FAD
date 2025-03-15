@@ -1,10 +1,24 @@
 {
-	"langName": "Spanish",
+	"langName": "Español (Traducido Automáticamente)",
 	"strings": {
-	  "actions": {
-	  },
-	  "description": {
-		"fullscreen": "WWW"
-	  }
+		"actions": {
+		},
+		"description": {
+			"fullscreen": "Pantalla Completa"
+		},
+		"settings": {
+			"settings_title": "Configuración",
+			"language": "Idioma",
+			"on_startup": "Ejecutar al iniciar",
+			"enable_fullscreen": "Habilitar Pantalla Completa",
+			"enable_edgeglow": "Habilitar Brillo en los Bordes",
+			"bg_type": "Tipo de Fondo",
+			"bg_types": {
+				"album": "Álbum",
+				"static": "Estático",
+				"artist": "Artista"
+			},
+			"bg_blur": "Desenfoque de Fondo"
+		}
 	}
-  }
+}

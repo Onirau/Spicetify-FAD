@@ -2,9 +2,11 @@ import React, { useEffect, useRef, useState } from "react";
 import { Configuration } from "../../../types/config";
 import { useSMM } from "../../../SMM/useSMM";
 import { DispatchAction } from "../../../SMM/SMM";
+import { LocaleID, translations, useTranslate } from "../../../resources/locale";
 
 function FADSettings() {
     const config = useSMM("config")
+    const getTranslate = useTranslate();
     const settingsRef = useRef<HTMLDivElement | null>(null);
 
     const handleChange = (key: keyof Configuration, value: any) => {
@@ -60,11 +62,11 @@ function FADSettings() {
                 borderRadius: "10px",
                 boxShadow: "0px 4px 10px rgba(0, 0, 0, 0.2)"
             }}>
-                <h2>Settings</h2>
+                <h2>{getTranslate("settings.settings_title")}</h2>
 
                 {/* Toggle: onStartUp */}
                 <div>
-                    <label>Run on Startup</label>
+                    <label>{getTranslate("settings.on_startup")}</label>
                     <input 
                         type="checkbox"
                         checked={config?.onStartUp}
@@ -74,7 +76,7 @@ function FADSettings() {
 
                 {/* Toggle: canFullscreen */}
                 <div>
-                    <label>Enable Fullscreen</label>
+                    <label>{getTranslate("settings.enable_fullscreen")}</label>
                     <input 
                         type="checkbox"
                         checked={config?.canFullscreen}
@@ -84,19 +86,22 @@ function FADSettings() {
 
                 {/* Dropdown: localeID */}
                 <div>
-                    <label>Language</label>
+                    <label>{getTranslate("settings.language")}</label>
                     <select 
                         value={config?.localeID}
                         onChange={(e) => handleChange("localeID", e.target.value)}
                     >
-                        <option value="en">English</option>
-                        <option value="es">Spanish</option>
+                        {Object.keys(translations).map((locale) => 
+                            <option key={locale} value={locale}>
+                                {translations[locale as LocaleID].langName}
+                            </option>
+                        )}
                     </select>
                 </div>
 
                 {/* Toggle: edgeGlow */}
                 <div>
-                    <label>Enable Edge Glow</label>
+                    <label>{getTranslate("settings.enable_edgeglow")}</label>
                     <input 
                         type="checkbox"
                         checked={config?.edgeGlow}
@@ -106,20 +111,20 @@ function FADSettings() {
 
                 {/* Dropdown: bgType */}
                 <div>
-                    <label>Background Type</label>
+                    <label>{getTranslate("settings.bg_type")}</label>
                     <select 
                         value={config?.bgType}
                         onChange={(e) => handleChange("bgType", e.target.value)}
                     >
-                        <option value="STATIC">Static</option>
-                        <option value="ARTIST">Artist</option>
-                        <option value="ALBUM">Album</option>
+                        <option value="STATIC">{getTranslate("settings.bg_types.static")}</option>
+                        <option value="ARTIST">{getTranslate("settings.bg_types.artist")}</option>
+                        <option value="ALBUM">{getTranslate("settings.bg_types.album")}</option>
                     </select>
                 </div>
 
                 {/* Input: bgBlur */}
                 <div>
-                    <label>Background Blur</label>
+                    <label>{getTranslate("settings.bg_blur")}</label>
                     <input 
                         type="number"
                         value={config?.bgBlur}

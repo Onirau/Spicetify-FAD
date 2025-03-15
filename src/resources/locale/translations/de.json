@@ -1,0 +1,24 @@
+{
+	"langName": "Deutsch (Automatisch Übersetzt)",
+	"strings": {
+		"actions": {
+		},
+		"description": {
+			"fullscreen": "Vollbild"
+		},
+		"settings": {
+			"settings_title": "Einstellungen",
+			"language": "Sprache",
+			"on_startup": "Beim Start ausführen",
+			"enable_fullscreen": "Vollbild aktivieren",
+			"enable_edgeglow": "Randleuchten aktivieren",
+			"bg_type": "Hintergrundtyp",
+			"bg_types": {
+				"album": "Album",
+				"static": "Statisch",
+				"artist": "Künstler"
+			},
+			"bg_blur": "Hintergrundunschärfe"
+		}
+	}
+}

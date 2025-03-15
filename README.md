@@ -1,6 +1,6 @@
 # Installation Instructions
 
-First of all, I wouldn't recommend using this extension unless you're ok with occasional bugs.
+First of all, I wouldn't recommend using this extension unless you're ok with occasional bugs, and alot of missing features from other FAD implementations.
 
 Despite that, I would recommend installing the wrapper and that's it; you'll have automatic updates.
 

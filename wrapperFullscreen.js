@@ -6,4 +6,4 @@ function addScript(src) {
     document.getElementsByTagName("head")[0].appendChild(script);
 }
 
-addScript("");
+addScript("https://raw.githubusercontent.com/Onirau/Spicetify-FAD/refs/heads/main/dist/test-app.js");

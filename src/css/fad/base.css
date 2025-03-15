@@ -1,0 +1,311 @@
+#fad-display-container {
+    width: 100%;
+    height: 100%;
+    position: fixed;
+    left: 0;
+    top: 0;
+    cursor: default;
+    background-color: grey;
+}
+
+#fad-details {
+    width: 100%;
+    height: 100%;
+    position: fixed;
+    left: 0;
+    top: 20%;
+}
+
+#fad-header {
+    width: 100%;
+    height: auto;
+    position: relative;
+    background-color: transparent;
+}
+
+#fad-title-container {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-top: 50px; /* Add margin to increase distance from the cover */
+}
+
+#fad-cover-container {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: transparent;
+}
+
+#fad-cover {
+    width: 55%;
+    max-width: 450px;
+    aspect-ratio: 1;
+    background-color: blueviolet;
+    background-size: cover;
+    border-radius: 4%;
+}
+
+#fad-title, #fad-album {
+    letter-spacing: 0.25px;
+    font-weight: bold;
+    color: #000;
+    margin: 0;
+    padding: 0;
+}
+
+#fad-title {
+    font-size: 4vw;
+    padding-bottom: 15px; /* Add a bit of space between title and album */
+}
+
+#fad-album {
+    font-size: 2vw;
+    font-weight: lighter;
+}
+
+#fad-bg {
+    width: 100%;
+    height: 100%;
+    position: fixed;
+    left: 0;
+    top: 0;
+    background-size: cover;
+    background-color: aquamarine;
+    transition: background-color 2s ease, background-image 2s ease;
+    transform: scale(1.1);
+}
+
+.playing {
+    background-color: green;
+}
+
+.paused {
+    background-color: blue;
+}
+
+#fad-controls {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 20px; /* Add margin to increase distance from the album text */
+}
+
+#fad-favourite {
+    background-color: transparent;
+    border: none;
+    padding: 0px 0px;
+    margin: 10px 10px;
+    border-radius: 50px;
+    cursor: pointer;
+    font-size: 1.5vw;
+    transition: background-color 0.3s, transform 0.3s;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#fad-favourite :hover {
+    transform: scale(1.1);
+}
+
+#fad-playlist-add {
+    background-color: transparent;
+    border: none;
+    padding: 0px 0px;
+    margin: 10px 10px;
+    border-radius: 50px;
+    cursor: pointer;
+    font-size: 1.5vw;
+    transition: background-color 0.3s, transform 0.3s;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#fad-playlist-add :hover {
+    transform: scale(1.1);
+}
+
+#fad-controls button {
+    background-color: transparent;
+    border: none;
+    padding: 10px 20px;
+    margin: 0 10px;
+    border-radius: 50px;
+    cursor: pointer;
+    font-size: 1.5vw;
+    transition: background-color 0.3s, transform 0.3s;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#fad-mute {
+    background-color: transparent;
+    border: none;
+    padding: 0px 0px;
+    margin: 10px 10px;
+    border-radius: 50px;
+    cursor: pointer;
+    font-size: 1.5vw;
+    transition: background-color 0.3s, transform 0.3s;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#fad-controls button:hover {
+    transform: scale(1.1);
+}
+
+#fad-controls svg {
+    width: 24px;
+    height: 24px;
+}
+
+#fad-playlist-info {
+    position: fixed;
+    top: 15px; /* Increase padding from the top */
+    left: 60px; /* Increase padding from the left */
+    font-size: 2vw; /* Make the text bigger */
+    font-weight: bold; /* Make the text bolder */
+    color: #FFFFFF;
+    display: flex;
+    align-items: center;
+}
+
+#fad-playlist-info span {
+    margin: 0 10px; /* Increase spacing between the dots and the text */
+}
+
+#fad-progress-bar-container {
+    width: 80%;
+    height: 20px; /* Increase the height for easier clicking */
+    position: relative;
+    margin-top: 20px;
+    cursor: pointer;
+}
+
+#fad-progress-bar {
+    height: 10px; /* Original height */
+    width: 100%;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: rgba(255, 255, 255, 0.3);
+    border-radius: 2.5px;
+}
+
+#fad-progress {
+    height: 100%;
+    background-color: #1db954;
+    border-radius: 2.5px;
+    transition: width 1s linear;
+}
+
+#fad-progress-bar.dragging #fad-progress {
+    transition: width 0s linear; /* Instant snapping when dragging */
+}
+
+@keyframes skeleton-load {
+    0% {
+        background-color: #444;
+    }
+    100% {
+        background-color: #666;
+    }
+}
+
+/* Container styling with fade-in animation */
+.playlist-menu {
+    position: fixed;
+    z-index: 1000;
+    background: #333;
+    color: #fff;
+    padding: 10px;
+    border-radius: 5px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    max-height: 20vh;
+    width: 300px;
+    display: flex;
+    flex-direction: column;
+    opacity: 0;
+    animation: fadeInMenu 0.5s forwards;
+}
+  
+/* Fade in and slide down animation */
+@keyframes fadeInMenu {
+    from {
+        opacity: 0;
+        transform: translateY(-20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Scrollable list styling */
+.playlist-list {
+    overflow-y: auto;
+    flex: 1;
+    margin-bottom: 10px;
+}
+
+/* Each playlist item */
+.playlist-item {
+    padding: 5px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    transition: background-color 0.3s ease;
+}
+
+.playlist-item:hover {
+    background-color: rgba(255, 255, 255, 0.1);
+}
+
+/* Tick mark styling */
+.tick {
+    margin-right: 10px;
+}
+
+/* Playlist image */
+.playlist-image {
+    width: 30px;
+    height: 30px;
+    margin-right: 10px;
+    background-size: cover;
+    background-position: center;
+    border-radius: 5px;
+}
+
+/* Placeholder for missing images */
+.playlist-image.placeholder {
+    background-color: #444;
+}
+
+/* Footer container */
+.playlist-footer {
+    display: flex;
+    justify-content: space-between;
+}
+
+/* Button styling */
+.playlist-footer button {
+    background-color: #444;
+    color: #fff;
+    padding: 5px 10px;
+    border-radius: 5px;
+    border: none;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.playlist-footer button:hover {
+    background-color: #555;
+}  

@@ -1,4 +1,4 @@
-# Installation Insturctions
+# Installation Instructions
 
 First of all, I wouldn't recommend using this extension unless you're ok with occasional bugs.
 

@@ -1,6 +1,8 @@
 # Installation Insturctions
 
-I would recommend installing the wrapper and that's it; you'll have automatic updates.
+First of all, I wouldn't recommend using this extension unless you're ok with occasional bugs.
+
+Despite that, I would recommend installing the wrapper and that's it; you'll have automatic updates.
 
 Drag and drop the wrapper into your Spiectify extensions folder and do the following commands.
 
